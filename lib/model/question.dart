@@ -16,16 +16,21 @@ class Question {
   }
 
   List<Country> getAdditionalCountries() {
+    print("${answer.getName()} file: $imageUrl");
     List<Country> countries = [];
     Random rand = Random();
 
     while (countries.length < 3) {
       Country country =
           Country.values.elementAt(rand.nextInt(Country.values.length));
+      print("country for add: ${country.getName()}, answer: ${answer.getName()}");
+      print("$countries");
       if (country == answer || countries.contains(country)) {
+        print("continue");
         continue;
       }
       countries.add(country);
+      print("${country.getName()} was added");
     }
 
     return countries;

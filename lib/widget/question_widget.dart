@@ -3,6 +3,7 @@ import 'package:country_quiz/model/questions_base.dart';
 import 'package:country_quiz/widget/answer.dart';
 import 'package:country_quiz/widget/progress_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:full_screen_image/full_screen_image.dart';
 
 class QuestionWidget extends StatefulWidget {
   @override
@@ -37,6 +38,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
     while (question == null || questions.contains(question)) {
       question = data.getRandomQuestion();
     }
+    questions.add(question);
     List<Country> answers = question.additionCountries;
     answers.add(question.answer);
 
@@ -59,14 +61,12 @@ class _QuestionWidgetState extends State<QuestionWidget> {
           count: _countResult,
           total: _questionIndex,
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            width: double.infinity,
-            height: 200,
-            child: question.image,
+        Container(
+          height: 200,
+          child: FullScreenWidget(
+            child: ClipRect(
+              child: question.image,
+            ),
           ),
         ),
         Container(
