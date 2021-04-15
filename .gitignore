@@ -3,6 +3,7 @@
 # Files and directories created by pub
 .dart_tool/
 .packages
+.gitignore
 build/
 # If you're building an application, you may want to check-in your pubspec.lock
 pubspec.lock
@@ -19,3 +20,16 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.idea/.gitignore
+/country_quiz.iml
+/android/country_quiz_android.iml
+/.idea/libraries/Dart_Packages.xml
+/.idea/libraries/Dart_SDK.xml
+/.idea/libraries/Flutter_Plugins.xml
+/.idea/libraries/KotlinJavaRuntime.xml
+/.idea/runConfigurations/main_dart.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
